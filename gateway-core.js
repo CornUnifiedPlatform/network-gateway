@@ -46,7 +46,7 @@ function createGateway(socket) {
         const methods = parseAuthMethods();
         if (methods.length) {
           const selected = methods.find(m => m === AUTH_METHODS.NO_AUTH);
-          socket.write(Buffer.from([NETWORK_VERSION, selected[0]]);
+          socket.write(Buffer.from([NETWORK_VERSION, selected[0]]));
           session.state = STATE.REQUEST;
           processBuffer();
         }
